@@ -6,3 +6,10 @@ services:
       - "8000:8000"
     env_file:
       - ./backend/.env
+
+  postgres:
+    image: postgres:17
+    env_file:
+      - ./backend/.env
+    ports:
+      - "5432:5432"

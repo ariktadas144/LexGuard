@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from app.core.config import settings
 from sqlalchemy import text
-from app.db.database import engine
+from app.db.database import engine, base
+from app.models import user
+
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.APP_NAME,
